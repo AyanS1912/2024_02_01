@@ -214,10 +214,10 @@ app.get('/search', async (req, res) => {
         if(!products){
             return res.status(404).send("Product not found. Try again later.")
         }
-        return res.status(200).send(products);
+        return res.status(200).send(products)
         
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: error.message })
     }
 });
 
