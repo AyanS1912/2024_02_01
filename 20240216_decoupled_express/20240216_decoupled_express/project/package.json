@@ -115,7 +115,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon mongowala.js"
+    "start": "nodemon mongowala.js",
+    "jstart":"nodemon jsonwala.js"
   },
   "keywords": [
     "MongoDb",

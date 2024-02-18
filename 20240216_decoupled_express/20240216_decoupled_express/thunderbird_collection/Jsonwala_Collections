@@ -1,0 +1,227 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Json_collections",
+    "dateExported": "2024-02-18T17:38:32.049Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "14e7f386-b088-413b-afc1-027160874d70",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Retrieve all Products",
+            "url": "http://localhost:5000/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-18T17:02:34.291Z",
+            "modified": "2024-02-18T17:02:34.291Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "56ad70a7-f492-47e7-bd85-bca76ba232f9",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Retrieve information of a specific product",
+            "url": "http://localhost:5000/product/?id=5",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-18T17:14:12.524Z",
+            "modified": "2024-02-18T17:14:12.524Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "dedec43c-ee06-47bb-9524-c65bc6d73a0d",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Add new Product",
+            "url": "http://localhost:5000/addProduct?name=Product%20Name&price=99.99&stock=50&img=https://example.com/image.jpg&desc=Product%20Description",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-02-18T17:30:06.730Z",
+            "modified": "2024-02-18T17:30:06.730Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "Product%20Name",
+                    "isPath": false
+                },
+                {
+                    "name": "price",
+                    "value": "99.99",
+                    "isPath": false
+                },
+                {
+                    "name": "stock",
+                    "value": "50",
+                    "isPath": false
+                },
+                {
+                    "name": "img",
+                    "value": "https://example.com/image.jpg",
+                    "isPath": false
+                },
+                {
+                    "name": "desc",
+                    "value": "Product%20Description",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "75c902c2-ec51-4217-a41b-4de6fe5e4aa6",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Update an existing product",
+            "url": "localhost:5000/updateProduct/20",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-18T17:31:52.261Z",
+            "modified": "2024-02-18T17:31:52.261Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"new product hai\",\n  \"desc\" : \"new\",\n  \"stock\" : 10,\n  \"price\" : 1000000\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "95a54903-eb57-4258-84e4-3623243f7408",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Delete an existing Product",
+            "url": "http://localhost:5000/deleteProduct/5",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-18T17:33:07.187Z",
+            "modified": "2024-02-18T17:33:07.187Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "de457007-e8dc-4c8b-aef0-d65084f9f8e3",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Retrieve all the Orders",
+            "url": "localhost:5000/order",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-02-18T17:33:51.967Z",
+            "modified": "2024-02-18T17:33:51.967Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f5ca728d-16ab-4499-a98c-ad9a8434af4b",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Retrieve an existing order using known id",
+            "url": "localhost:5000/order/4",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-02-18T17:34:44.867Z",
+            "modified": "2024-02-18T17:34:44.867Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "339e3032-6c75-4c2a-888d-746d1c517e6f",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Add new Order",
+            "url": "http://localhost:5000/addOrder?address=12320Main20St&product_id=1&total_count=2&delivery_status=Pending",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-02-18T17:35:18.067Z",
+            "modified": "2024-02-18T17:35:18.067Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "address",
+                    "value": "12320Main20St",
+                    "isPath": false
+                },
+                {
+                    "name": "product_id",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "total_count",
+                    "value": "2",
+                    "isPath": false
+                },
+                {
+                    "name": "delivery_status",
+                    "value": "Pending",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "413eef55-57d0-48a0-8784-061147775a52",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Return Status of an Order",
+            "url": "http://localhost:5000/order/20/deliveryStatus",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-02-18T17:36:01.274Z",
+            "modified": "2024-02-18T17:36:01.274Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c62db59d-dee3-452c-a0e6-4893eb6e59ad",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Return Product matching with keywords",
+            "url": "http://localhost:5000/products/search?query=Android",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-02-18T17:36:53.203Z",
+            "modified": "2024-02-18T17:36:53.203Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "query",
+                    "value": "Android",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "e2d2ebaa-28bd-4fdd-94ef-a06c1f30a03d",
+            "colId": "c01c2dd3-245b-4561-8353-684d7e3df68d",
+            "containerId": "",
+            "name": "Cancel an Booked Order",
+            "url": "http://localhost:5000/order/7/cancel",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-02-18T17:37:48.480Z",
+            "modified": "2024-02-18T17:37:48.480Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

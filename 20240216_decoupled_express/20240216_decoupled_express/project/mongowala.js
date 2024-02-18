@@ -48,7 +48,6 @@ mongoose.connect(uri)
 
 const Products = require("./schema/products")
 const Orders = require("./schema/orders")
-const Address = require('ipaddr.js')
 app.use(express.json())
 
 
@@ -105,7 +104,7 @@ app.put('/updateProducts/:id', async (req, res) => {
 app.delete('/deleteProducts/:id', async (req, res) => {
     try {
         const productId = req.params.id;
-        const deletedProduct = await Products.findByIdAndDelete(productId);
+        const deletedProduct = await Products.findByIdAndDelete(productId)
         if (!deletedProduct) {
             return res.status(404).send("Product not found")
         }
@@ -132,20 +131,20 @@ app.get('/orders', async (req, res) => {
 
 app.post('/placeOrder/:id', async (req, res) => {
     try {
-        const product = await Products.findById(req.params.id);
+        const product = await Products.findById(req.params.id)
         if (!product) {
-            return res.status(404).send({ message: "Product not found." });
+            return res.status(404).send({ message: "Product not found." })
         }
 
         if (req.body.quantity <= 0) {
-            return res.status(400).send({ message: "Invalid order quantity." });
+            return res.status(400).send({ message: "Invalid order quantity." })
         }
 
         if (req.body.quantity > product.stock) {
-            return res.status(400).send({ message: "Insufficient stock." });
+            return res.status(400).send({ message: "Insufficient stock." })
         }
-        product.stock -= req.body.quantity;
-        await product.save();
+        product.stock -= req.body.quantity
+        await product.save()
 
         const orderDetails = {
             productId: product._id,
@@ -155,13 +154,13 @@ app.post('/placeOrder/:id', async (req, res) => {
             delivery_status: 'Pending',
             cost : product.price*parseInt(req.body.quantity)
         }
-        const newOrder = await Orders.create(orderDetails);
-        return res.status(201).send("Order placed successfully.");
+        const newOrder = await Orders.create(orderDetails)
+        return res.status(201).send("Order placed successfully.")
     }
     catch (err) {
-        return res.status(500).send({ message: err.message });
+        return res.status(500).send({ message: err.message })
     }
-});
+})
 
 
 //Cancel an order by id
