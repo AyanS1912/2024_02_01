@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const orders = new mongoose.Schema({
+    productName : {
+        type : String,
+        required : true,
+    },
     date:{
         type:Date,
         default: Date.now()
@@ -13,7 +17,7 @@ const orders = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'
     },
-    total_count: {
+    quantity: {
         type: Number,
         min: 1,
         required: true
@@ -21,6 +25,10 @@ const orders = new mongoose.Schema({
     delivery_status: {
         type: String,
         required: true
+    },
+    cost:{
+        type:Number,
+        required:true
     }
 })
 
