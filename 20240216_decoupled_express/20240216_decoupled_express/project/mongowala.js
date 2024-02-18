@@ -202,9 +202,23 @@ app.get('/orders/:id/deliveryStatus', async (req, res) => {
 });
 
 /** ----- ----------------------------Search ---------------------- - --- - ------- */
-// app.get('/search/:q',async (req,res) => {
-//     const query = req.query.q
-//     const product = Products.find({name:query})
-//     console.log(product)
-// })
+app.get('/search', async (req, res) => {
+    try {
+        const query = req.query.q
+        const products = await Products.find({
+            $or: [
+                { name: { $regex: query, $options: 'i' } }, //search query in name
+                { desc: { $regex: query, $options: 'i' } }  // search query in description
+            ]
+        })
+        if(!products){
+            return res.status(404).send("Product not found. Try again later.")
+        }
+        return res.status(200).send(products);
+        
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
 app.listen(port, () => console.log("Server Starting"))
